@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Massarat Bano Kaifi</title>
+<meta name="description" content="Energy healing with Massarat Bano Kaifi: Cord Cutting and Akashic Records readings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf6f1;
+    --bg-alt: #f2ebe2;
+    --surface: #ffffff;
+    --ink: #2b2433;
+    --ink-soft: #5e5566;
+    --line: #e4dacd;
+    --accent: #6b4c7a;
+    --accent-ink: #ffffff;
+    --gold: #b88a44;
+    --focus: #8a64a0;
+    --ok-bg: #e9f3ea;
+    --ok-ink: #24572c;
+    --err: #a3342b;
+    --shadow: 0 1px 2px rgba(43,36,51,.04), 0 8px 24px rgba(43,36,51,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1720; --bg-alt: #221d29; --surface: #2a2432;
+      --ink: #f1ebf4; --ink-soft: #bdb2c4; --line: #3b3344;
+      --accent: #c3a2d4; --accent-ink: #1b1720; --gold: #d8b06e; --focus: #c3a2d4;
+      --ok-bg: #1f3424; --ok-ink: #b6e0bd; --err: #f0948a;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1720; --bg-alt: #221d29; --surface: #2a2432;
+    --ink: #f1ebf4; --ink-soft: #bdb2c4; --line: #3b3344;
+    --accent: #c3a2d4; --accent-ink: #1b1720; --gold: #d8b06e; --focus: #c3a2d4;
+    --ok-bg: #1f3424; --ok-ink: #b6e0bd; --err: #f0948a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 17px/1.65 Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; line-height: 1.15; margin: 0; }
+  p { margin: 0 0 1em; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .brand { font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+  .nav ul a { color: var(--ink-soft); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .nav ul a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 96px 0 88px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -40% -10% auto; height: 520px;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 16%, transparent), transparent);
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; }
+  .hero h1 { font-size: clamp(40px, 7vw, 68px); margin-bottom: 20px; }
+  .hero p.lead { font-size: 19px; color: var(--ink-soft); max-width: 600px; margin: 0 auto 32px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
+    padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: 16px;
+    text-decoration: none; border: 0; cursor: pointer; font-family: inherit;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); margin-left: 10px; }
+
+  section { padding: 88px 0; }
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+  .section-head h2 { font-size: clamp(32px, 5vw, 44px); margin-bottom: 14px; }
+  .section-head p { color: var(--ink-soft); }
+
+  /* Services */
+  #services { background: var(--bg-alt); }
+  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 36px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  }
+  .card .icon {
+    width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+    background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); margin-bottom: 20px;
+  }
+  .card h3 { font-size: 32px; margin-bottom: 12px; }
+  .card > p { color: var(--ink-soft); }
+  .card h4 { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); margin: 18px 0 10px; }
+  .card ul { margin: 0; padding-left: 20px; color: var(--ink-soft); }
+  .card ul li { margin-bottom: 6px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+  .chip { font-size: 14px; padding: 6px 12px; border-radius: 999px; background: var(--bg-alt); border: 1px solid var(--line); color: var(--ink-soft); }
+  .card .btn { align-self: flex-start; margin-top: auto; }
+
+  /* Bio */
+  .bio { display: grid; grid-template-columns: 340px 1fr; gap: 56px; align-items: center; }
+  .portrait {
+    aspect-ratio: 4/5; border-radius: 200px 200px 18px 18px;
+    background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 35%, var(--bg-alt)), color-mix(in srgb, var(--gold) 30%, var(--bg-alt)));
+    display: grid; place-items: center; color: var(--surface);
+    font-family: "Cormorant Garamond", serif; font-size: 88px; font-weight: 600;
+    position: relative;
+  }
+  .portrait small { position: absolute; bottom: 16px; font: 500 12px Inter, sans-serif; letter-spacing: .08em; opacity: .85; }
+  .bio blockquote {
+    margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--gold);
+    font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 24px; line-height: 1.35;
+  }
+  .placeholder { background: color-mix(in srgb, var(--gold) 20%, transparent); padding: 0 4px; border-radius: 3px; }
+
+  /* Contact */
+  #contact { background: var(--bg-alt); }
+  .contact { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+  .contact-info p { color: var(--ink-soft); }
+  .contact-info dl { margin: 28px 0 0; }
+  .contact-info dt { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; margin-top: 16px; }
+  .contact-info dd { margin: 4px 0 0; color: var(--ink-soft); }
+  form { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 36px; box-shadow: var(--shadow); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { margin-bottom: 18px; }
+  label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  label .opt { font-weight: 400; color: var(--ink-soft); }
+  input, select, textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+    background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+  }
+  textarea { min-height: 140px; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--focus); outline-offset: 1px; border-color: transparent; }
+  .field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--err); }
+  .error { color: var(--err); font-size: 13px; margin-top: 4px; display: none; }
+  .field.invalid .error { display: block; }
+  form .btn { width: 100%; margin-top: 6px; }
+  .note { font-size: 13px; color: var(--ink-soft); margin: 14px 0 0; text-align: center; }
+  .success { display: none; background: var(--ok-bg); color: var(--ok-ink); border-radius: 12px; padding: 20px; text-align: center; }
+  .success h3 { font-size: 26px; margin-bottom: 6px; }
+
+  footer { padding: 36px 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-soft); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  footer p { margin: 0; max-width: 640px; }
+
+  @media (max-width: 820px) {
+    .nav ul { gap: 18px; }
+    .services, .bio, .contact, .row { grid-template-columns: 1fr; }
+    .bio { gap: 32px; }
+    .portrait { max-width: 280px; margin: 0 auto; width: 100%; }
+    section { padding: 64px 0; }
+    .card, form { padding: 26px; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .brand { font-size: 19px; }
+    .nav ul { gap: 14px; }
+    .nav ul a { font-size: 14px; }
+    .nav ul li.hide-sm { display: none; }
+    .hero { padding: 64px 0; }
+    .btn.ghost { margin: 12px 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Massarat Bano Kaifi</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li class="hide-sm"><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Energy Healing &amp; Soul Guidance</div>
+      <h1>Release what binds you.<br>Remember who you are.</h1>
+      <p class="lead">Gentle, intuitive sessions in Cord Cutting and Akashic Records reading, to help you let go of old attachments and find clarity on your path.</p>
+      <a class="btn" href="#contact">Book a session</a>
+      <a class="btn ghost" href="#services">Explore services</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Services</div>
+        <h2>How I can support you</h2>
+        <p>Each session is held in a calm, confidential space. Sessions are offered in person or online, and every session begins with a short conversation about what you are hoping for.</p>
+      </div>
+
+      <div class="services">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3"/><path d="M8 12h3M13 12h3"/><path d="M11 9l2 6"/></svg>
+          </div>
+          <h3>Cord Cutting</h3>
+          <p>Over time we form energetic cords with people, places and past experiences. Some nourish us; others keep us tied to old pain, draining relationships or patterns we have outgrown. Cord Cutting is a guided healing that gently identifies and releases these attachments, so your energy returns to you.</p>
+          <h4>This may help if you</h4>
+          <ul>
+            <li>Feel stuck after a breakup, loss or difficult relationship</li>
+            <li>Keep thinking about someone you want to move on from</li>
+            <li>Feel drained, heavy or not fully yourself</li>
+            <li>Notice the same patterns repeating in your life</li>
+          </ul>
+          <h4>What to expect</h4>
+          <ul>
+            <li>A short intake conversation about your intentions</li>
+            <li>A guided meditation and energetic release</li>
+            <li>Time afterwards to reflect, with simple aftercare practices</li>
+          </ul>
+          <div class="meta">
+            <span class="chip">60 minutes</span>
+            <span class="chip">In person or online</span>
+          </div>
+          <a class="btn" href="#contact" data-service="cord-cutting">Book Cord Cutting</a>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/><path d="M12 1.5v1.5M7 8h2M15 8h2"/></svg>
+          </div>
+          <h3>Akashic Records</h3>
+          <p>The Akashic Records are understood as an energetic library holding the story of your soul: its lessons, gifts and purpose. In a reading, I open your Records and bring through guidance in response to your questions, offering insight into your relationships, choices and the deeper meaning behind what you are living.</p>
+          <h4>This may help if you</h4>
+          <ul>
+            <li>Are at a crossroads and want clarity on your next step</li>
+            <li>Want to understand recurring challenges or relationships</li>
+            <li>Are curious about your soul's purpose and gifts</li>
+            <li>Seek a sense of peace, perspective and direction</li>
+          </ul>
+          <h4>What to expect</h4>
+          <ul>
+            <li>You prepare 3 to 5 questions ahead of the session</li>
+            <li>A sacred prayer to open your Records</li>
+            <li>Channelled guidance and open discussion of your questions</li>
+          </ul>
+          <div class="meta">
+            <span class="chip">75 minutes</span>
+            <span class="chip">In person or online</span>
+          </div>
+          <a class="btn" href="#contact" data-service="akashic-records">Book a Reading</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap bio">
+      <div class="portrait" role="img" aria-label="Photo placeholder for Massarat Bano Kaifi">
+        MK
+        <small>PHOTO PLACEHOLDER</small>
+      </div>
+      <div>
+        <div class="eyebrow">About</div>
+        <h2 style="font-size: clamp(32px,5vw,44px); margin-bottom: 18px;">Meet Massarat</h2>
+        <p>Massarat Bano Kaifi is an intuitive energy healer and Akashic Records reader who helps people release what no longer serves them and reconnect with their inner wisdom.</p>
+        <p>Her own journey into healing began <span class="placeholder">[a short personal story: what drew her to this work]</span>. Since then she has trained in <span class="placeholder">[training, lineages or certifications]</span> and has supported <span class="placeholder">[number]</span> clients through <span class="placeholder">[years]</span> years of practice.</p>
+        <p>Massarat's approach is warm, grounded and non-judgemental. She believes every person already holds the answers they seek, and that her role is simply to hold space so those answers can surface.</p>
+        <blockquote>“Healing is not about becoming someone new. It is about returning to who you have always been.”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="contact-info">
+        <div class="eyebrow">Contact</div>
+        <h2 style="font-size: clamp(32px,5vw,44px); margin-bottom: 18px;">Begin your journey</h2>
+        <p>Share a little about what you are looking for, and Massarat will get back to you within two working days to arrange a time that suits you.</p>
+        <dl>
+          <dt>Email</dt><dd><span class="placeholder">[email address]</span></dd>
+          <dt>Location</dt><dd><span class="placeholder">[city]</span> · Online sessions worldwide</dd>
+          <dt>Hours</dt><dd><span class="placeholder">[e.g. Mon–Sat, 10am–6pm]</span></dd>
+        </dl>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <div id="form-fields">
+          <div class="row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" required>
+              <div class="error">Please enter your name.</div>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+              <div class="error">Please enter a valid phone number.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <div class="error">Please enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="cord-cutting">Cord Cutting</option>
+              <option value="akashic-records">Akashic Records</option>
+              <option value="not-sure">Not sure yet, I'd like guidance</option>
+            </select>
+            <div class="error">Please choose a service.</div>
+          </div>
+          <div class="field">
+            <label for="description">Description <span class="opt">(what would you like support with?)</span></label>
+            <textarea id="description" name="description" required></textarea>
+            <div class="error">Please tell us a little about what you're looking for.</div>
+          </div>
+          <button class="btn" type="submit">Send enquiry</button>
+          <p class="note">Your details are kept confidential and used only to respond to your enquiry.</p>
+        </div>
+        <div class="success" id="success" role="status">
+          <h3>Thank you</h3>
+          <p style="margin:0">Your enquiry has been received. Massarat will be in touch soon.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Massarat Bano Kaifi. All rights reserved.</p>
+    <p>Energy healing is a complementary practice and is not a substitute for medical or psychological care.</p>
+  </div>
+</footer>
+
+<script>
+  // Preselect the service when a "Book" button is clicked
+  document.querySelectorAll('[data-service]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.getElementById('service').value = a.dataset.service;
+    });
+  });
+
+  // Client-side validation; prototype only (no backend yet)
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ok = true;
+    form.querySelectorAll('.field').forEach(function (f) {
+      var el = f.querySelector('input, select, textarea');
+      var v = el.value.trim();
+      var valid = v.length > 0;
+      if (el.type === 'email') valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      if (el.type === 'tel') valid = v.replace(/[^\d]/g, '').length >= 7;
+      f.classList.toggle('invalid', !valid);
+      if (!valid && ok) { el.focus(); ok = false; }
+    });
+    if (!ok) return;
+    document.getElementById('form-fields').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  });
+  form.addEventListener('input', function (e) {
+    var f = e.target.closest('.field');
+    if (f) f.classList.remove('invalid');
+  });
+</script>
+</body>
+</html>
